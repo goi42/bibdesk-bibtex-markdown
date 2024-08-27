@@ -1,0 +1,1 @@
+* [@<$citeKey/>](@<$citeKey/>.md): <$remoteURLs.URL?>[</$remoteURLs.URL?>*<$fields.Title.stringByDeTeXifyingString.stringByRemovingCurlyBraces/>*<$remoteURLs.URL?>](<$remoteURLs.URL.absoluteString.@firstObject/>)</$remoteURLs.URL?>..

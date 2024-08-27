@@ -18,18 +18,14 @@ You use it simply by selecting the records you want to export, right click, and 
 For the example I chose to export several types of records at the same time:
 article, inproceedings, misc, phdthesis, unpublished.
 
-Here some sample output.
+Here is some sample output:
 
-* X. Wang, A. Erickson, J. Fan, and X. Jia.  
-**[Hamiltonian Properties of DCell Networks](http://comjnl.oxfordjournals.org/content/58/11/2944.abstract)**. The Computer Journal, 58(11):2944--2955, 2015.
-* A. Erickson and F. Ruskey.  
-**[Generating Tatami Coverings Efficiently](http://arxiv.org/abs/1403.4776)**. Proc. of the international conference Génération Aléatoire de Structures Combinatoires (GASCom), Bertinoro, Italy, 2014.
-* N. J. A. Sloane.  
-**A022567, Expansion of Product $(1 + q^m)^2; m=1..\infty$**. 2010.
-* A. Erickson.  
-**[Monomino-Domino Tatami Coverings](http://hdl.handle.net/1828/4902)**. University of Victoria, 2013.
-* A. Erickson and F. Ruskey.  
-**[Enumerating maximal tatami mat coverings of square grids with $v$ vertical dominoes](http://arxiv.org/abs/1304.0070)**. Manuscript in preparation, 2013.
+* [@Sloane2010](@Sloane2010.md): N. J. A. Sloane. *A022567, Expansion of Product $(1 + q^m)^2; m=1..\infty$*. 2010.
+* [@EricksonRuskey2013c-mypubs](@EricksonRuskey2013c-mypubs.md): A. Erickson and F. Ruskey. [*Enumerating maximal tatami mat coverings of square grids with $v$ vertical dominoes*](http://arxiv.org/abs/1304.0070). Manuscript in preparation, 2013.
+* [@EricksonRuskey2014](@EricksonRuskey2014.md): A. Erickson and F. Ruskey. [*Generating Tatami Coverings Efficiently*](http://arxiv.org/abs/1403.4776). Proc. of the international conference Génération Aléatoire de Structures Combinatoires (GASCom), Bertinoro, Italy, 2014.
+* [@WangEricksonFan2015](@WangEricksonFan2015.md): X. Wang, A. Erickson, J. Fan, and X. Jia. [*Hamiltonian Properties of DCell Networks*](http://comjnl.oxfordjournals.org/content/58/11/2944.abstract). The Computer Journal, 58(11):2944--2955, 2015.
+* [@Erickson2013a](@Erickson2013a.md): A. Erickson. [*Monomino-Domino Tatami Coverings*](http://hdl.handle.net/1828/4902). University of Victoria, 2013.
+
 
 ### Below is the (cleaned) source  for those entries ###
 
@@ -96,9 +92,11 @@ BibDesk converts URLs found the the Url field on start up, so if your URLs are n
 Due to my own preferences, the output has the following idiosyncracies:
 
   * Output is a list; items start with a *
-  * Authors appear on their own line.
+  * Cite keys are listed first, prefixed with an @ symbol, and styled as
+    Markdown links to a Markdown file of the same name.
+  * Authors appear on the same line as everything else.
   * Authors appear as "J. Doe"
-  * **Titles are in bold**
+  * *Titles are in italics*
   * Titles are hyperlinked if a link exists (and the link address is not
     displayed anywhere)
 
@@ -111,8 +109,7 @@ File -> New Template is very useful for discovering how to write templates.
 The template source is not pretty to look at, but here is an example:
 
 ```
-* <$authors.abbreviatedName.stringByDeTeXifyingString.stringByRemovingCurlyBraces.@componentsJoinedByCommaAndAnd/>.  
-**<$remoteURLs.URL?>[</$remoteURLs.URL?><$fields.Title.stringByDeTeXifyingString.stringByRemovingCurlyBraces/><$remoteURLs.URL?>](<$remoteURLs.URL.absoluteString.@firstObject/>)</$remoteURLs.URL?>**. <$fields.Journal.stringByDeTeXifyingString.stringByRemovingCurlyBraces.stringByAppendingCommaAndSpaceIfNotEmpty/><$fields.Volume/><$fields.Number.parenthesizedStringIfNotEmpty/><$fields.Pages?>:<$fields.Pages.stringByAppendingCommaAndSpaceIfNotEmpty/></$fields.Pages?><$fields.Year/>.
+* [@<$citeKey/>](@<$citeKey/>.md): <$authors.abbreviatedName.stringByDeTeXifyingString.stringByRemovingCurlyBraces.@componentsJoinedByCommaAndAnd/>. <$remoteURLs.URL?>[</$remoteURLs.URL?>*<$fields.Title.stringByDeTeXifyingString.stringByRemovingCurlyBraces/>*<$remoteURLs.URL?>](<$remoteURLs.URL.absoluteString.@firstObject/>)</$remoteURLs.URL?>. <$fields.Journal.stringByDeTeXifyingString.stringByRemovingCurlyBraces.stringByAppendingCommaAndSpaceIfNotEmpty/><$fields.Volume/><$fields.Number.parenthesizedStringIfNotEmpty/><$fields.Pages?>:<$fields.Pages.stringByAppendingCommaAndSpaceIfNotEmpty/></$fields.Pages?><$fields.Year/>.
 ```
 
 ### Other ways of converting BibTeX to Markdown ###
