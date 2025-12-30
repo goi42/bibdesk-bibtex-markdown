@@ -121,6 +121,11 @@ There is, in fact, a template that offers
 [pandoc integration in BibDesk](https://github.com/dsanson/bibdesk-pandoc-export-templates),
 and it might be worth checking out.
 
+### Citing Podcasts ###
+
+See the Riverside [post](https://riverside.com/blog/how-to-cite-a-podcast) for
+inspiration on podcast citations.
+
 ### Issues ###
 
   * Page ranges 8--10 that use two dashes don't convert to single dashes
